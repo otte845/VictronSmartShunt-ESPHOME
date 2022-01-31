@@ -7,10 +7,7 @@ from esphome.const import (
     DEVICE_CLASS_CURRENT,
     DEVICE_CLASS_EMPTY,
     DEVICE_CLASS_POWER,
-    DEVICE_CLASS_ENERGY,
     DEVICE_CLASS_VOLTAGE,
-    STATE_CLASS_TOTAL_INCREASING,
-    STATE_CLASS_TOTAL,
     ICON_CURRENT_AC,
     ICON_EMPTY,
     ICON_FLASH,
@@ -80,13 +77,13 @@ CONFIG_SCHEMA = cv.Schema(
             UNIT_WATT, ICON_POWER, 0, DEVICE_CLASS_POWER
         ),
         cv.Optional(CONF_YIELD_TOTAL): sensor.sensor_schema(
-            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_ENERGY, STATE_CLASS_TOTAL,
+            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_POWER
         ),
         cv.Optional(CONF_YIELD_YESTERDAY): sensor.sensor_schema(
-            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_ENERGY
+            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_POWER
         ),
         cv.Optional(CONF_YIELD_TODAY): sensor.sensor_schema(
-            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_POWER, STATE_CLASS_TOTAL_INCREASING,
+            UNIT_WATT_HOURS, ICON_POWER, 0, DEVICE_CLASS_POWER
         ),
         cv.Optional(CONF_PANEL_VOLTAGE): sensor.sensor_schema(
             UNIT_VOLT, ICON_FLASH, 3, DEVICE_CLASS_VOLTAGE
